@@ -9,19 +9,22 @@ def znajdz_max(lista):
                 max_element = len(k)
     return max_element
 
-#max = znajdz_max(lista_B))
-print(znajdz_max(lista_B))
-# print(lista_B)
+
+
 def do_lewej(lista):
     maxLen = znajdz_max(lista)
     for i in lista:
+        additionalList = []
         for index, j in enumerate(i):
             k = str(j)
             if k < str(maxLen):
                 spacebarAmount = maxLen - len(k)
-                result = " "*spacebarAmount + k
-                #print(result)
-                i[index] = result
-    return lista
+                result = k+ " "*spacebarAmount
+                additionalList.append(result)
+                if j == i:
+                    print('\n')
+        print(additionalList)
+        additionalList.clear()
 
-print(do_lewej(lista_B))
+        
+do_lewej(lista_B)
