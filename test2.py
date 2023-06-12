@@ -1,50 +1,40 @@
 
-
 def read_list(list):
-    list_string = []
 
+    lista_wynik=[]
+    max_v=len(str((max([sublist[-1] for sublist in lista_A]))))
 
 
     # Using for loop
-
+    a="["
+    l=0
+    wynik=a
     for i in list:
+        k = 0
+        l=l+1
+        b='['
 
+        wynik=wynik+b
         for j in i:
-            k= str(j)
-            list_string.append(k)
-        dlugosc = len(max(list_string, key=len))
 
+        f l != len(list):
 
-    print(list_string)
-    print(list)
+        else:
+            k=0
+            for j in i:
+                k = k + 1
 
-    print("[")
-    for i in list:
-        print('[', end=" ")
-        # for j in i:
-        for index in range(len(i)):
-
-            if(index< len(i)-1):
-                print(str(i[index]), end=",")
-            else:
-                print(str(i[index]), end="")
-
-
-            if(len(str(j)) != dlugosc):
-                for l in range(len(str(i[index])), dlugosc):
-                    print("*", end="")
-            else:
-                print("", end="")
-
-
-        print(']')
-    print(']')
-
-
+                if k != len(i):
+                    c=str(j)+", "
+                    wynik=wynik+c
+                else:
+                    c=str(j)+']'
+                    wynik = wynik + c
+                    wynik=wynik+']'
+    return wynik
 
 
 
 
 lista_A=[[1, 2, 10, 150], [10, 2, 1000, 2], [1, 120, 1, 1000]]
 print(read_list(lista_A))
-
