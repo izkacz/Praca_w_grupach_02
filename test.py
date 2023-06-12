@@ -1,45 +1,63 @@
-
-
 def read_list(list):
-    list_string = []
-
+    lista_wynik=[]
+    max_v=len(str((max([sublist[-1] for sublist in lista_A]))))
 
 
     # Using for loop
-
+    a="["
+    l=0
+    wynik=a
     for i in list:
+        k = 0
+        l=l+1
+        b='['
 
-        for j in i:
-            k= str(j)
-            list_string.append(k)
-
-    dlugosc = len(max(list_string, key=len))
-
-    print(list_string)
-    print(list)
-
-    print("[")
-    for i in list:
-        print('[', end=" ")
-        for j in i:
-
-            if(i.index(j)< len(i)-1):
-                print(str(j), end=",")
-            else:
-                print(str(j), end="")
+        wynik=wynik+b
 
 
-            if(len(str(j)) != dlugosc):
-                for l in range(len(str(j)), dlugosc):
-                    print("*", end="")
-            else:
-                print("", end="")
+        if l != len(list):
+            for j in i:
+                k=k+1
+                if k != len(i):
+                    d=''
+                    for f in range(0,max_v-len(str(j))):
+                        d=d+" "
 
 
-        print(']')
-    print(']')
+                    c=d+str(j)+', '
+                    wynik = wynik + c
 
 
+
+                else:
+                    d = ''
+                    for f in range(0, max_v - len(str(j))):
+                        d = d + " "
+                    c=d+str(j) +']'+',\n '
+                    wynik = wynik + c
+
+
+
+
+        else:
+            k=0
+            for j in i:
+                k = k + 1
+
+                if k != len(i):
+                    d=""
+                    for f in range(0,max_v-len(str(j))):
+                        d=d+" "
+                    c=d+str(j)+", "
+                    wynik=wynik+c
+                else:
+                    d=""
+                    for f in range(0,max_v-len(str(j))):
+                        d=d+" "
+                    c=d+str(j)+']'
+                    wynik = wynik + c
+                    wynik=wynik+']'
+    return wynik
 
 
 
