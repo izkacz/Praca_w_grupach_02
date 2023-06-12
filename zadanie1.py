@@ -1,15 +1,4 @@
-lista_B = [[1, 2, 10, 150], [10, 2, 1000, 2], [1, 120, 1, 1000]]
-lista_C = [[1, 7, 909, 1024], [24, 66, 89, 100], [77, 24, 3, 208]]
-
-def znajdz_max(lista):
-    max_element = 0
-    for i in lista:
-        for j in i:
-            k = str(j)
-            if len(k) > max_element:
-                max_element = len(k)
-    return max_element
-
+#zadaniePauliny
 def read_list(list):
     lista_wynik=[]
     max_v=len(str((max([sublist[-1] for sublist in lista_A]))))
@@ -73,6 +62,19 @@ def read_list(list):
 lista_A=[[1, 2, 10, 150], [10, 2, 1000, 2], [1, 120, 1, 1000]]
 print(read_list(lista_A))
 
+#zadanieMikołaja
+lista_B = [[1, 2, 10, 150], [10, 2, 1000, 2], [1, 120, 1, 1000]]
+lista_C = [[1, 7, 909, 1024], [24, 66, 89, 100], [77, 24, 3, 208]]
+
+def znajdz_max(lista):
+    max_element = 0
+    for i in lista:
+        for j in i:
+            k = str(j)
+            if len(k) > max_element:
+                max_element = len(k)
+    return max_element
+
 def do_lewej(lista):
     maxLen = znajdz_max(lista)
     for i in lista:
@@ -89,5 +91,6 @@ do_lewej(lista_B)
 print('\n')
 do_lewej(lista_C)
 
+#testyIzy
 assert read_list([[2, 7, 209, 3],[1000, 32, 128, 6],[87, 5432, 9, 7000]])=="[[   2,    7, 209,    3],\n[1000,   32, 128,    6],\n[  87, 5432,   9, 7000]]"
 assert do_lewej([[2, 7, 209, 3],[1000, 32, 128, 6],[87, 5432, 9, 7000]])=="[[2,    7,    209, 3],\n[1000, 32,   128, 6],\n[87,   5432, 9,   7000]]"
